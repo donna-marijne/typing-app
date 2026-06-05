@@ -1,0 +1,23 @@
+# Ideas
+
+- Let the user pick between preconfigured projects (Quake, SQLite, linux kernel, ...)
+- Make snapshots of projects to keep them up to date without invalidating users' projects
+- Let the user submit their own GitHub repo to be made available (only to them?)
+- Let the user decide whether to type by file or by function/class
+- Let the user decide what to type next when finishing a file/function/class
+  - next sequential file/function/class
+  - an untyped definition that appeared in what they just typed (select)
+  - random
+- Skip boring source files, e.g. Quake's quotients/remainders lookup tables; options:
+  - use some kind of heuristic to analyze the level of repetition at ingestion
+  - let the user hit skip and adjust the completion target
+- Don't make the user type banner comments that are present in every file (but they should be shown?)
+- User configurations (can change before starting each unit)
+  - consolidate whitespace (reduce runs of whitespace to one)
+    - should this visually collapse the whitespace or just skip the cursor forward?
+  - treat tabs and spaces as equivalent (maybe this should always be the case)
+  - auto indent (don't make the user press tab to set indent before typing, if this is off then maintain indent level from previous line)
+  - type/show/hide comments (users should be able to see the comments to understand the code even if they don't want to type them)
+  - replace non-ascii characters with a ?
+  - stop on error, and other normal typing tutor config
+- Metrics: characters per minute
