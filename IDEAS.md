@@ -7,10 +7,12 @@
 - Let the user decide what to type next when finishing a file/function/class
   - next sequential file/function/class
   - an untyped definition that appeared in what they just typed (select)
-  - random
+  - random (with options for length, e.g. <20 lines)
 - Skip boring source files, e.g. Quake's quotients/remainders lookup tables; options:
   - use some kind of heuristic to analyze the level of repetition at ingestion
   - let the user hit skip and adjust the completion target
+- Skip non-source files, maybe whitelist file extensions found in the repo?
+- Skip binary files always
 - Don't make the user type banner comments that are present in every file (but they should be shown?)
 - User configurations (can change before starting each unit)
   - consolidate whitespace (reduce runs of whitespace to one)
@@ -21,3 +23,7 @@
   - replace non-ascii characters with a ?
   - stop on error, and other normal typing tutor config
 - Metrics: characters per minute
+- Show problematic bigrams in unit summary
+- Improvement mode: pick a function/class/file, try to beat your best total time
+- Gamification stuff, levels, streaks (no leaderboards though)
+- Press Esc at any time to pause the timer?
