@@ -1,2 +1,4 @@
 .env
 .env.production
+
+/db_data
