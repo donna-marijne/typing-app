@@ -2,3 +2,4 @@
 .env.production
 
 /db_data
+/api/.aws-sam

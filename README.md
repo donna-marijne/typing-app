@@ -4,4 +4,5 @@
 
 - Go
 - Docker
+- golang-migrate
 
