@@ -4,5 +4,8 @@
 
 - Go
 - Docker
-- golang-migrate
+- goose
+- sqlc
+- AWS CLI
+- SAM CLI
 
