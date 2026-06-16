@@ -1,0 +1,41 @@
+name: Deploy API
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'api/**'
+
+jobs:
+  deploy-sam:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: '1.26'
+          cache-dependency-path: '**/go.sum'
+
+      - name: Set up SAM
+        uses: aws-actions/setup-sam@v2
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: eu-west-2
+
+      - name: Build
+        run: |
+          make -C api build
+
+      - name: Deploy
+        run: |
+          make -C api deploy

@@ -1,4 +1,4 @@
-HONY: build deploy start
+.PHONY: build deploy start
 
 build:
 	sam build
