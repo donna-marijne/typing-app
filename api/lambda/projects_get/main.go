@@ -10,6 +10,7 @@ import (
 func handler(context context.Context, request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	return events.APIGatewayProxyResponse{
 		StatusCode: 501,
+		Body:       "not yet implemented!",
 	}, nil
 }
 

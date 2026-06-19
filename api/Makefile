@@ -1,10 +1,7 @@
-.PHONY: build deploy start
+.PHONY: all clean
 
-build:
-	sam build
+all:
+	$(MAKE) -C lambda all
 
-deploy: build
-	sam deploy
-
-run: build
-	sam local start-api
+clean:
+	$(MAKE) -C lambda clean

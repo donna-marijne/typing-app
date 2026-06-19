@@ -1,14 +1,19 @@
-.PHONY: docker gen build migrate run dev
-.DEFAULT_GOAL := build
+.PHONY: all clean deploy docker migrate run
+.DEFAULT_GOAL := all
 
 docker:
 	docker compose up --detach
 
-gen: docker
-	$(MAKE) -C database gen
+all: docker
+	$(MAKE) -C database all
+	$(MAKE) -C api all
+	$(MAKE) -C infra all
 
-build: gen
-	$(MAKE) -C api build
+clean:
+	$(MAKE) -C api clean
+
+deploy: all
+	$(MAKE) -C infra deploy
 
 migrate: docker
 	$(MAKE) -C database migrate-up
@@ -16,4 +21,4 @@ migrate: docker
 run: docker
 	$(MAKE) -C api run
 
-dev: build migrate run
+# dev: build migrate run

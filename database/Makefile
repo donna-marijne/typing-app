@@ -1,6 +1,6 @@
-.PHONY: gen migrate-up migrate-down
+.PHONY: all migrate-up migrate-down
 
-gen:
+all:
 	sqlc generate
 
 migrate-up:

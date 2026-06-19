@@ -7,5 +7,5 @@
 - goose
 - sqlc
 - AWS CLI
-- SAM CLI
+- AWS CDK
 
